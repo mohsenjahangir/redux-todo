@@ -6,7 +6,6 @@ import { ProductAdd } from "./views/ProductAdd";
 function App() {
   return (
     <div className="App">
-      <h1>redux sample</h1>
       <Counter/>
       <hr/>
       <h1>product list</h1>

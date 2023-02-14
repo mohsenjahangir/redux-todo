@@ -1,4 +1,6 @@
 import React from 'react'
+
+import Button from '@mui/material/Button';
 import { useSelector,useDispatch } from 'react-redux'
 import { productRemove } from '../state-manangment/actions/productAction';
 
@@ -13,7 +15,7 @@ export const ProductList = () => {
         {products.map((item,id)=>
         <ul key={item.id}>
             <li>{item.title}-{item.price}</li>
-            <button onClick={()=>remove(item.id)}>remove</button>
+            <Button variant="outlined" color="error" onClick={()=>remove(item.id)}>remove</Button>
         </ul>
         )}
     </div>
