@@ -2,6 +2,7 @@ import React, { useRef } from 'react'
 import Box from '@mui/material/Box';
 import TextField from '@mui/material/TextField';
 
+
 import Button from '@mui/material/Button';
 import { useDispatch } from 'react-redux'
 import { productAdd } from '../state-manangment/actions/productAction'
@@ -10,6 +11,7 @@ export const ProductAdd = () => {
     const id = useRef();
     const title = useRef();
     const price = useRef();
+    const time = useRef();
     const save = () => {
         let item = {};
         item.id = id.current.value;
@@ -17,11 +19,13 @@ export const ProductAdd = () => {
         item.price = price.current.value;
         console.log(item)
         dispatch(productAdd(item))
+        console.log(item)
     }
+    const today = new Date();
     return (
         <div>
             <Box
-            marginLeft='834px'
+
                 component="form"
                 sx={{
                     '& > :not(style)': { m: 1, width: '25ch' },
@@ -29,9 +33,10 @@ export const ProductAdd = () => {
                 noValidate
                 autoComplete="off"
             >
-                <div><TextField inputRef={id}  id="outlined-basic" label="id" variant="outlined"/></div>
+                <div><TextField inputRef={id} id="outlined-basic" label="id" variant="outlined" /></div>
                 <div><TextField inputRef={title} id="outlined-basic" label="title" variant="outlined" /> </div>
                 <div><TextField inputRef={price} id="outlined-basic" label="price" variant="outlined" /> </div>
+                
                 <div><Button variant="outlined" onClick={() => save()}>add</Button> </div>
 
             </Box>

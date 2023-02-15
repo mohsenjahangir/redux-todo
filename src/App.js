@@ -1,18 +1,15 @@
 import { Counter } from "./views/Counter";
-import '../src/App.css'
+
 import { ProductList } from "./views/ProductList";
 import { ProductAdd } from "./views/ProductAdd";
+import Navbar from './views/Navbar'
+import Main from "./views/Main";
 
 function App() {
   return (
-    <div className="App">
-      <Counter/>
-      <hr/>
-      <h1>product list</h1>
-      <ProductList/>
-      <hr/>
-      <h1>product add</h1>
-      <ProductAdd/>
+    <div >
+      <Navbar/>
+      <Main/>
     </div>
   );
 }
